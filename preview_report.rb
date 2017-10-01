@@ -627,7 +627,7 @@ mab.html do
                   # PRE-103 As the top ten list is sorted by issues, sort the node breakdown by catalog changes
                   # This is actually the default if the nodes have no issues, but if all nodes have at least
                   # 1 known issue, then this sorting is skewed in favor of that, thus we always sort explicitly
-                  overview['all_nodes'].sort_by { |h| h['added_resource_count'] + h['missing_resource_count'] + h['conflicting_resource_count'] }.map { |node| "/var/liv/puppet/preview/#{node['name']}/catalog_diff.json" }
+                  overview['all_nodes'].sort_by { |h| h['added_resource_count'] + h['missing_resource_count'] + h['conflicting_resource_count'] }.map { |node| "/var/lib/puppet/preview/#{node['name']}/catalog_diff.json" }
                 end
         diffs.each do |catalog_diff_file|
           next if File.zero?(catalog_diff_file)
